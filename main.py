@@ -7,12 +7,12 @@ import time
 import os
 
 
-def listadoClientes():
+def listadoClientes(ventana_texto):
     print("todos los clientes")
     carpeta = "db"
     archivos = files =os.listdir(carpeta)
     for archivo in archivos :
-        ventana_texto.insert(tk.END, archivo)
+        ventana_texto.insert(tk.END, archivo+"\n")
 
 ventana = tk.Tk() #(Metodo de la libreria para crer ventana)
 ventana.title("Programa de Luis David") #para asignarle titulo a la ventana
@@ -24,8 +24,10 @@ panelInsertar(ventana)
 
 marco_listado = tk.Frame(ventana)
 marco_listado.pack()
-tk .Button(marco_listado, text="Obtener Clientes", command=lambda: listadoClientes())
+tk .Button(marco_listado, text="Obtener Clientes",
+           command=lambda: listadoClientes(ventana_texto)).pack()
 
-ventana_texto = tk.Text
+ventana_texto = tk.Text(marco_listado)
+ventana_texto.pack()
 
 ventana.mainloop()  #(para cerrar la ventana)

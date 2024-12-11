@@ -21,7 +21,10 @@ def mostrarMenu(ventana):
         barra_menu.add_cascade(label="Ayuda", menu=menu_ayuda)#Annadir opciones a la barra de menu
 
         menu_cliente= tk.Menu(barra_menu,tearoff=0)
-        menu_cliente.add_command(label="Insertar un cliente", )
+        menu_cliente.add_command(label="Insertar un cliente", 
+                                 command =lambda:insertarCliente(ventana))
+        menu_cliente.add_command(label="Listar clientes", 
+                                 command =lambda:listarCliente(ventana))
         barra_menu.add_cascade(label="Cliente", menu=menu_cliente)
         
         ventana.config(menu=barra_menu)

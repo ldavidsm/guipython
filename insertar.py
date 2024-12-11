@@ -25,8 +25,7 @@ def panelInsertar (ventana):
         archivo.close()
 
     panel_insertar= tk.Frame(ventana)
-    #panel_insertar.pack()
-    panel_bienvenida.unpack()
+    panel_insertar.pack()
     tk.Label(panel_insertar, text="Introduce el nombre del cliente").pack()
     tk.Entry(panel_insertar,
      textvariable= nombre_cliente).pack()
